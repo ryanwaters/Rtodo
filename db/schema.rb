@@ -13,15 +13,15 @@
 
 ActiveRecord::Schema.define(:version => 20130801015658) do
 
+  create_table "item_lists", :id => false, :force => true do |t|
+    t.integer "list_id"
+    t.integer "item_id"
+  end
+
   create_table "items", :force => true do |t|
     t.string   "name"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
-  end
-
-  create_table "items_lists", :id => false, :force => true do |t|
-    t.integer "list_id"
-    t.integer "item_id"
   end
 
   create_table "lists", :force => true do |t|
